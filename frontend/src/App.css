@@ -1,3 +1,5 @@
+/* styles.css */
+
 /* Base Styles */
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -56,19 +58,22 @@ input {
 }
 
 button {
-  background-color: #e0e0e0;
+  background: linear-gradient(145deg, #e0e0e0, #ffffff);
   color: #333;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
 }
 
 button:hover {
-  background-color: #d1d1d1;
-  transform: translateY(-2px);
+  background: linear-gradient(145deg, #d1d1d1, #f0f0f0);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 button:active {
   transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 /* Card Styles */
