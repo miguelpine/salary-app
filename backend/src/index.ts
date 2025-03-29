@@ -3,8 +3,6 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import salaryRoutes from './routes/salary'; // Adjust the path as needed
-const MONGO_URI = "mongodb+srv://miguelpine:<db_password>@cluster0.frsehqz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-
 
 dotenv.config();
 
@@ -22,7 +20,7 @@ app.use(express.json());
 // Connect to MongoDB
 const connectDB = async () => {
   try {
-    await mongoose.connect(MONGO_URI!);
+    await mongoose.connect(process.env.MONGO_URI!);
     console.log('MongoDB connected successfully');
   } catch (error) {
     console.error('Error connecting to MongoDB:', error);

@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import { addSalary } from '../api';
 
+const DEFAULT_NAME = 'Miguel';
+const DEFAULT_AMOUNT = '1000';
+const today = new Date().toISOString().split('T')[0];
+
 export const SalaryForm: React.FC = () => {
-  const [name, setName] = useState('');
-  const [amount, setAmount] = useState('');
-  const [date, setDate] = useState('');
+  const [name, setName] = useState(DEFAULT_NAME);
+  const [amount, setAmount] = useState(DEFAULT_AMOUNT);
+  const [date, setDate] = useState(today);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
