@@ -1,7 +1,10 @@
 {
-  "name": "salary-app",
-  "version": "0.1.0",
+  "name": "salary-app-frontend",
+  "version": "1.0.0",
   "private": true,
+  "description": "Frontend for the Salary App, built with React.",
+  "author": "Miguel Rodrigues",
+  "license": "ISC",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
