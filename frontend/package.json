@@ -4,7 +4,7 @@
   "private": true,
   "description": "Frontend for the Salary App, built with React.",
   "author": "Miguel Rodrigues",
-  "homepage": "https://miguelpine.github.io/salary-tracker/",
+  "homepage": "https://miguelpine.github.io/salary-app/",
   "license": "ISC",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
