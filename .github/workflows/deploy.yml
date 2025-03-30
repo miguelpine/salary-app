@@ -29,11 +29,23 @@ jobs:
         working-directory: frontend
 
       - name: List build directory contents
-        run: ls -la build
+        run: ls -la
         working-directory: frontend
+
+      - name: List build directory contents
+        run: ls -la
+        working-directory: frontend/build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
+        working-directory: frontend/build
         with:
           personal_token: ${{ secrets.PAT }}
-          publish_dir: ./frontend/build
+          publish_dir: ./build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        working-directory: build
+        with:
+          personal_token: ${{ secrets.PAT }}
+          publish_dir: ./build
