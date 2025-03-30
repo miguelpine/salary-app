@@ -37,15 +37,15 @@ jobs:
         working-directory: frontend/build
 
       - name: Deploy to GitHub Pages
-        working-directory: frontend/build
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.PAT }}
+          working-directory: frontend/build
           publish_dir: ./build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
-        working-directory: build
         with:
           personal_token: ${{ secrets.PAT }}
+          working-directory: build
           publish_dir: ./build
