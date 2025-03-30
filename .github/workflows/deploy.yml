@@ -28,7 +28,7 @@ jobs:
         run: npm run build
         working-directory: frontend
 
-      - name: List build directory contents
+      - name: List frontend directory contents
         run: ls -la
         working-directory: frontend
 
@@ -40,12 +40,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.PAT }}
-          working-directory: frontend/build
-          publish_dir: ./build
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          personal_token: ${{ secrets.PAT }}
-          working-directory: build
-          publish_dir: ./build
+          publish_dir: ./frontend/build
