@@ -1,6 +1,7 @@
 import React from 'react';
 import { SalaryForm } from './components/SalaryForm';
 import { SalaryList } from './components/SalaryList';
+
 import './App.css';
 
 const App: React.FC = () => {
