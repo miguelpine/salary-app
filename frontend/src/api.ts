@@ -1,4 +1,5 @@
-const API_URL = 'http://localhost:5001/api'; // Update with your backend URL
+// const API_URL = 'http://localhost:5001/api'; // Update with your backend URL
+const API_URL = 'https://salary-app-xisb.onrender.com/api';
 
 export const fetchSalaries = async () => {
   const response = await fetch(`${API_URL}/salaries`);
