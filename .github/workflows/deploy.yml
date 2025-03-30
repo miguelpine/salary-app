@@ -32,9 +32,11 @@ jobs:
         run: ls -la build
         working-directory: frontend
 
+      - name: Set Git user configuration
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Deploy to GitHub Pages
         run: npx gh-pages -d build -r https://${{ secrets.PAT }}@github.com/miguelpine/salary-app.git
         working-directory: frontend
-        env:
-          GIT_COMMITTER_NAME: "github-actions[bot]"
-          GIT_COMMITTER_EMAIL: "github-actions[bot]@users.noreply.github.com"
