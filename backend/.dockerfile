@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 5001
 
 # Define the command to run your app
-CMD ["node", "index.js"]
+CMD ["node", "src/index.ts"]
