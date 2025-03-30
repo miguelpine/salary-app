@@ -33,8 +33,8 @@ jobs:
         working-directory: frontend
 
       - name: List build directory contents
-        run: ls -la
-        working-directory: frontend/build
+        run: ls -la build
+        working-directory: frontend
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
