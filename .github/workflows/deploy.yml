@@ -37,8 +37,8 @@ jobs:
         working-directory: frontend/build
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
         working-directory: frontend/build
+        uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.PAT }}
           publish_dir: ./build
