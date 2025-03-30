@@ -1,13 +1,19 @@
-name: Deploy to GitHub Pages
+name: Deploy Frontend to GitHub Pages
 
 on:
   push:
     branches:
       - main
+    paths:
+      - "frontend/**"
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: frontend
 
     steps:
       - name: Checkout repository
