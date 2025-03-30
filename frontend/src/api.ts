@@ -4,7 +4,7 @@ const API_URL = 'https://salary-app-xisb.onrender.com/api';
 export const fetchSalaries = async () => {
   const response = await fetch(`${API_URL}/salaries`);
   if (!response.ok) {
-    throw new Error('Network response was not ok');
+    throw new Error('Error: Network response was not ok');
   }
   return response.json();
 };
