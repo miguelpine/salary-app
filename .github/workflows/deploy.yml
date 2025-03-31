@@ -35,5 +35,3 @@ jobs:
       - name: Deploy to GitHub Pages
         run: npx gh-pages -d build
         working-directory: frontend
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
