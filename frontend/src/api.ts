@@ -18,6 +18,7 @@ export const addSalary = async (salaryData: { name: string; amount: number; date
     },
     body: JSON.stringify(salaryData),
   });
+  
   if (!response.ok) {
     throw new Error('Failed to add salary');
   }
