@@ -1,0 +1,20 @@
+{
+  "name": "salary-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Salary App project, including frontend and backend.",
+  "author": "Miguel Rodrigues",
+  "homepage": "https://miguelpine.github.io/salary-app/",
+  "license": "ISC",
+  "scripts": {
+    "start": "npm run start --prefix frontend",
+    "build": "npm run build --prefix frontend",
+    "test": "npm run test --prefix frontend",
+    "lint": "npm run lint --prefix frontend",
+    "server": "npm run start --prefix backend",
+    "dev": "concurrently \"npm run server\" \"npm run start --prefix frontend\""
+  },
+  "dependencies": {
+    "concurrently": "^7.0.0"
+  }
+}
