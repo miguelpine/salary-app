@@ -25,3 +25,31 @@ export const addSalary = async (salaryData: { name: string; amount: number; date
   }
   return response.json();
 };
+
+export const updateSalary = async (id: string, salaryData: { name: string; amount: number; date: string }) => {
+  const response = await fetch(`${API_URL}/salaries/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(salaryData),
+  });
+
+  if (!response.ok) {
+    throw new Error('Failed to update salary');
+  }
+  return response.json();
+};
+
+export const deleteSalary = async (id: string) => {
+  const response = await fetch(`${API_URL}/salaries/${id}`, {
+    method: 'DELETE',
+  });
+
+  console.log(response);
+
+  if (!response.ok) {
+    throw new Error('Failed to delete salary');
+  }
+  return response.json();
+};
