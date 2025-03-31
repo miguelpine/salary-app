@@ -2,6 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { fetchSalaries, deleteSalary, updateSalary } from '../api';
+import { FaTrash } from 'react-icons/fa';
+import './SalaryList.css'; // Import a CSS file for additional styling
 
 export const SalaryList: React.FC = () => {
   interface Salary {
@@ -94,12 +96,27 @@ export const SalaryList: React.FC = () => {
             ) : (
               <div>
                 {salary.name}: {salary.amount} on {new Date(salary.date).toDateString()}
-                <button onClick={() => handleEdit(salary)} style={{ marginLeft: '10px' }}>
-                  Edit
-                </button>
-                <button onClick={() => handleDelete(salary._id)} style={{ marginLeft: '10px' }}>
-                  Delete
-                </button>
+                <svg
+                  onClick={() => handleEdit(salary)}
+                  className="icon edit-icon"
+                  title="Edit"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  style={{ width: '16px', height: '16px', cursor: 'pointer' }}
+                >
+                  <path d="M12 20h9" />
+                  <path d="M16.5 3.5a2.121 2.121 0 113 3L7 19l-4 1 1-4 12.5-12.5z" />
+                </svg>
+                <FaTrash
+                  onClick={() => handleDelete(salary._id)}
+                  className="icon delete-icon"
+                  title="Delete"
+                />
               </div>
             )}
           </li>
