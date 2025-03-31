@@ -34,7 +34,5 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Deploy to GitHub Pages
-        run: npx gh-pages -d build
+        run: npx gh-pages -d build -r https://${{ secrets.PAT }}@github.com/miguelpine/salary-app.git
         working-directory: frontend
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
