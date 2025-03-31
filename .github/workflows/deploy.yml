@@ -24,10 +24,6 @@ jobs:
         run: npm install
         working-directory: frontend
 
-      - name: Install gh-pages
-        run: npm install gh-pages --save-dev
-        working-directory: frontend
-
       - name: Build project
         run: npm run build
         working-directory: frontend
@@ -35,3 +31,5 @@ jobs:
       - name: Deploy to GitHub Pages
         run: npx gh-pages -d build
         working-directory: frontend
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
