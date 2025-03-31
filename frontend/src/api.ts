@@ -7,6 +7,7 @@ export const fetchSalaries = async () => {
   if (!response.ok) {
     throw new Error('Error: Network response was not ok');
   }
+  
   return response.json();
 };
 
@@ -18,7 +19,7 @@ export const addSalary = async (salaryData: { name: string; amount: number; date
     },
     body: JSON.stringify(salaryData),
   });
-  
+
   if (!response.ok) {
     throw new Error('Failed to add salary');
   }
