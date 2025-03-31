@@ -9,8 +9,12 @@ dotenv.config();
 const app = express();
 
 // Use CORS middleware
+const allowedOrigins = process.env.NODE_ENV === 'development' 
+  ? ['http://localhost:3000', 'https://miguelpine.github.io'] 
+  : ['https://miguelpine.github.io'];
+
 app.use(cors({
-  origin: 'http://localhost:3000', // Allow requests from this origin
+  origin: allowedOrigins, // Allow requests from these origins
   methods: 'GET,POST,PUT,DELETE', // Allow specific HTTP methods
   credentials: true, // Allow cookies to be sent
 }));
